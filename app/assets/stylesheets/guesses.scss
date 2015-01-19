@@ -1,7 +1,9 @@
 // Place all the styles related to the Guesses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+label {
+  font-weight: bold;
+}
 #error_explanation {
   h2 {
     font-size: 1.2em;

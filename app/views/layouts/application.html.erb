@@ -4,21 +4,22 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "What the Milne?!" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application" 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+    <link href='http://fonts.googleapis.com/css?family=Dosis:400,700|Rancho' rel='stylesheet' type='text/css'>
   </head>
 
   <body>
-
-    <div class = "row">
-      <div class = "small-12 centered columns">
-        <%= yield %>
+    <div class="container">
+      <div class = "row">
+        <div class = "small-12 centered columns">
+          <%= yield %>
+        </div>
       </div>
     </div>
-
   </body>
 </html>

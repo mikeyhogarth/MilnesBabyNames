@@ -1,0 +1,22 @@
+body {
+	background: #a8dcea image-url("blue-stripe.gif") left top repeat;
+}
+.container {
+	background: #fff;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	max-width: 522px;
+	margin: 2em auto;
+	padding: 1em;
+}
+h1 {
+	font: "Rancho", serif;
+	text-align: center;
+}
+
+.button {
+	width: 100%;
+	text-transform: uppercase;
+	letter-spacing: .01em;
+	font-size: 21px;
+}

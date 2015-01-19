@@ -18,26 +18,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.label :name, "Your name:" %>
+    <%= f.text_field :name, class: :radius %>
   </div>
   <div class="field">
-    <%= f.label :first_guess %>
-    <%= f.text_field :first_guess %>
+    <%= f.label :first_guess, "First guess:" %>
+    <%= f.text_field :first_guess, class: :radius %>
   </div>
   <div class="field">
-    <%= f.label :second_guess %>
-    <%= f.text_field :second_guess %>
+    <%= f.label :second_guess, "Second guess:" %>
+    <%= f.text_field :second_guess, class: :radius %>
   </div>
   <div class="field">
-    <%= f.label :third_guess %>
-    <%= f.text_field :third_guess %>
+    <%= f.label :third_guess, "Third guess (go for something silly!):" %>
+    <%= f.text_field :third_guess, class: :radius %>
   </div>
   <div class="field">
     <%= label :secret_password, "The Secret Password...", for: :secret_password %>
-    <%= password_field :secret, :password %>
+    <%= password_field :secret, :password, class: :radius %>
   </div>
   <div class="actions">
-    <%= f.submit "Submit Guess!", class: :button %>
+    <%= f.submit "Submit Guess!", class: [:radius, :button] %>
   </div>
 <% end %>
