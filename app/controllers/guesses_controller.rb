@@ -1,5 +1,4 @@
 class GuessesController < ApplicationController
-  before_action :set_guess, only: [:show, :edit, :update, :destroy]
 
   # 
   # GET /guesses/new
@@ -13,23 +12,31 @@ class GuessesController < ApplicationController
   #
   def create
     @guess = Guess.new(guess_params)
-
-    if @guess.save
-      redirect_to thank_you_path
-    else
+    if secret_word_entered !=  secret_word_required
+      flash[:notice] = "Wrong secret word"
       render :new
+    else
+      if @guess.save
+        redirect_to thank_you_path
+      else
+        render :new
+      end
     end
   end
 
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_guess
-      @guess = Guess.find(params[:id])
-    end
+  # Only allow a trusted parameter "white list" through.
+  def guess_params
+    params.require(:guess).permit(:name, :first_guess, :second_guess, :third_guess)
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def guess_params
-      params.require(:guess).permit(:name, :first_guess, :second_guess, :third_guess)
-    end
+  def secret_word_entered
+    params[:secret][:password]      
+  end
+
+  def secret_word_required
+    Rails.env.production? ? ENV["secret_word"] : "welcome1"
+  end
+
 end

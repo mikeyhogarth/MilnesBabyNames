@@ -11,7 +11,7 @@
 }
 
 .field_with_errors {
-  label {
+  label, h3 {
     color: red;
   }
   input {

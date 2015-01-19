@@ -1,3 +1,9 @@
+<% flash.each do |name, msg| %>
+  <div class="field_with_errors">
+    <%= content_tag :h3, msg, class: :field_with_errors %>
+  </div>
+<% end %>
+
 <%= form_for(@guess) do |f| %>
   <% if @guess.errors.any? %>
     <div id="error_explanation">
