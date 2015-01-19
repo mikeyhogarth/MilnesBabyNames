@@ -1,0 +1,37 @@
+<%= form_for(@guess) do |f| %>
+  <% if @guess.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@guess.errors.count, "error") %> prohibited this guess from being saved:</h2>
+
+      <ul>
+      <% @guess.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :first_guess %>
+    <%= f.text_field :first_guess %>
+  </div>
+  <div class="field">
+    <%= f.label :second_guess %>
+    <%= f.text_field :second_guess %>
+  </div>
+  <div class="field">
+    <%= f.label :third_guess %>
+    <%= f.text_field :third_guess %>
+  </div>
+  <div class="field">
+    <%= label :secret_password, "The Secret Password...", for: :secret_password %>
+    <%= password_field :secret, :password %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit Guess!", class: :button %>
+  </div>
+<% end %>
