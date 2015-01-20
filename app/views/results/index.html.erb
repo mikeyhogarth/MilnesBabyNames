@@ -2,23 +2,11 @@
 <p>
   These are the guesses!
 </p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>First guess</th>
-      <th>Second guess</th>
-      <th>Third guess</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @guesses.each do |guess| %>
-      <tr>
-        <td><%= guess.name %></td>
-        <td><%= guess.first_guess %></td>
-        <td><%= guess.second_guess %></td>
-        <td><%= guess.third_guess %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @guesses.each do |guess| %>
+  <h2><%= guess.name %></h2>
+  <ul>
+  <li><%= guess.first_guess %></li>
+  <li><%= guess.second_guess %></li>
+  <li><%= guess.third_guess %></li>
+  </ul>
+<% end %>
