@@ -1,5 +1,11 @@
 class GuessesController < ApplicationController
 
+  before_filter :redirect_to_results
+
+  def redirect_to_results
+    redirect_to results_path
+  end
+
   # 
   # GET /guesses/new
   #
