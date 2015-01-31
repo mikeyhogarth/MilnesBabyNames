@@ -1,12 +1,24 @@
 <h1>Listing Guesses</h1>
+
+<p>And the name is...</p>
+
+<h2 class="result">Alexander James Milne</h2>
+
 <p>
-  These are the guesses!
+  And some people did get it right! Here are people's guesses...
 </p>
+
 <% @guesses.each do |guess| %>
   <h2><%= guess.name %></h2>
-  <ul>
-  <li><%= guess.first_guess %></li>
-  <li><%= guess.second_guess %></li>
-  <li><%= guess.third_guess %></li>
+  <ul class = "guess">
+    <li class = "<%= got_it_right?(guess.first_guess) %>">
+      <%= guess.first_guess %>
+    </li>
+    <li class = "<%= got_it_right?(guess.second_guess) %>">
+      <%= guess.second_guess %>
+    </li>
+    <li class = "<%= got_it_right?(guess.third_guess) %>">
+      <%= guess.third_guess %>
+    </li>
   </ul>
 <% end %>

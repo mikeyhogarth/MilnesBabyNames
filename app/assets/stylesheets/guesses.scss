@@ -19,4 +19,14 @@ label {
   input {
     border: solid 1px red;
   }
+
+
+
+}
+.guess li.correct {
+   color: #e65499 !important;
+}
+
+h2.result {
+  color: #e65499 !important;
 }
